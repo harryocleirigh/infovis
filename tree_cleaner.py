@@ -107,6 +107,9 @@ trees_with_neighborhood.loc[trees_with_neighborhood['species_latin'].isin(trees_
 print()
 print('Native tree search complete')
 print('Starting CSV write...')
+
+trees_with_neighborhood = trees_with_neighborhood[trees_with_neighborhood['neighborhood'].notnull()]
+
 # Write the neighborhoods to the csv
 trees_with_neighborhood.to_csv('cleaned_trees.csv', index=False)
 
